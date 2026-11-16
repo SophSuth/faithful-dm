@@ -1,0 +1,280 @@
+# My Faithful DM scenarios
+# Write one block per scenario. Separate blocks with a line containing only ---
+# The two states are the only JSON. Copy them from the character's clean
+# file and change only what the situation or the event changes.
+# The Checks line is optional: leave it out and every field in the expected
+# state gets checked. Common failure and Rules note are optional too.
+# Also accept is optional: other answers that are just as correct by the rules,
+# as JSON, e.g. {"conditions": [[]]}. It never changes the prompt.
+# When a block is finished, run: python3 make_scenarios.py my_scenarios.txt
+# That checks everything and writes my_scenarios.jsonl plus my_scenarios.csv.
+# Lines starting with # like these are ignored anywhere in the file.
+
+ID: S-01
+Category: death_saves
+Difficulty: medium
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 0, "hp_max": 20, "temp_hp": 0, "conditions": ["unconscious"], "death_saves": {"successes": 1, "failures": 2}, "dead": false}
+Event:
+Abigail rolls a death saving throw at the start of her turn. The roll result is given: 4. Nothing else happens.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 0, "hp_max": 20, "temp_hp": 0, "conditions": ["unconscious"], "death_saves": {"successes": 1, "failures": 3}, "dead": true}
+Also accept:
+{"conditions": [[]]}
+Common failure: Increments the failures to 3 but does not mark her dead, or adds two failures as if a low roll were a natural 1.
+Rules note: A death saving throw of 1 to 9 is one failure. Three failures means the character dies. Only a natural 1 counts as two failures, and this roll was a 4. Also accepted: removing unconscious from conditions. The 2024 rules do not say whether a dead creature keeps the Unconscious condition, so both answers count.
+---
+ID: S-02
+Category: health_reduction
+Difficulty: easy
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 20, "hp_max": 35, "temp_hp": 0}
+Event:
+Jimmy takes 5 points of slashing damage. He is not raging and has no resistance to slashing damage.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 15, "hp_max": 35, "temp_hp": 0}
+Common failure: An arithmetic slip, or halving the damage as if he were raging.
+Rules note: Damage reduces current hit points. Rage resistance does not apply here because he is not raging, and the event says so.
+---
+ID: S-03
+Category: feature_activation
+Difficulty: easy
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 35, "hp_max": 35, "temp_hp": 0, "rage_active": false, "feature_uses": {"Rage (Enter)": {"uses_max": 3, "uses_remaining": 3, "resets_on": "long rest"}}}
+Event:
+As a Bonus Action, Jimmy enters Rage. He is not wearing heavy armour.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 35, "hp_max": 35, "temp_hp": 0, "rage_active": true, "feature_uses": {"Rage (Enter)": {"uses_max": 3, "uses_remaining": 2, "resets_on": "long rest"}}}
+Also accept:
+{"resistances": [["poison", "bludgeoning", "piercing", "slashing"]]}
+Common failure: Marks rage as active but leaves the uses at 3, spending nothing.
+Rules note: Entering Rage costs one use. Jimmy has 3 uses per Long Rest at level 3. Also accepted: adding bludgeoning, piercing and slashing to resistances while raging. The key leaves resistances alone and treats rage_active as carrying the effect, but writing the resistance out is just as correct.
+---
+ID: S-04
+Category: health_reduction
+Difficulty: medium
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 20, "hp_max": 35, "temp_hp": 0, "rage_active": true}
+Event:
+Jimmy takes 5 points of slashing damage.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 18, "hp_max": 35, "temp_hp": 0, "rage_active": true}
+Also accept:
+{"resistances": [["poison", "bludgeoning", "piercing", "slashing"]]}
+Common failure: Subtracts the full 5 and lands on 15, ignoring the resistance, or halves 5 up to 3 and lands on 17.
+Rules note: Rage gives resistance to bludgeoning, piercing and slashing damage. Resistance halves the damage, rounded down, so 5 becomes 2. This is the exact twin of S-02: same character, same starting hit points, same damage, only the rage state flipped, so the two answers must differ (15 there, 18 here). Also accepted: listing the rage resistances in resistances, same as S-03.
+---
+ID: S-05
+Category: rest_recovery
+Difficulty: medium
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 18, "hp_max": 35, "temp_hp": 0, "abilities": {"strength": 16, "dexterity": 13, "constitution": 15, "intelligence": 10, "wisdom": 8, "charisma": 13}, "rage_active": false, "hit_dice": [{"class": "Barbarian", "die": "d12", "total": 3, "used": 0, "remaining": 3}], "feature_uses": {"Rage (Enter)": {"uses_max": 3, "uses_remaining": 2, "resets_on": "long rest"}}}
+Event:
+Jimmy finishes a Short Rest. During the rest he spends 2 Hit Dice to regain hit points. The dice rolls are given: 7 and 5.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 34, "hp_max": 35, "temp_hp": 0, "abilities": {"strength": 16, "dexterity": 13, "constitution": 15, "intelligence": 10, "wisdom": 8, "charisma": 13}, "rage_active": false, "hit_dice": [{"class": "Barbarian", "die": "d12", "total": 3, "used": 2, "remaining": 1}], "feature_uses": {"Rage (Enter)": {"uses_max": 3, "uses_remaining": 3, "resets_on": "long rest"}}}
+Common failure: Heals by the bare dice alone (12, landing on 30) and never derives his Constitution modifier from his ability scores, adds it only once instead of per die, or heals correctly but forgets that a Short Rest also regains one Rage use.
+Rules note: Each Hit Die spent heals its roll plus the Constitution modifier: (7 + 2) + (5 + 2) = 16 hit points. Rage regains one expended use on a Short Rest, not all of them, so 2 uses become 3 because only one was missing.
+---
+ID: S-06
+Category: spell_slots
+Difficulty: easy
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": null}
+Event:
+Abigail casts Misty Step using a spell slot. She does not upcast it.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 1}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": null}
+Common failure: Spends a 1st level slot instead of a 2nd level one.
+Rules note: Misty Step is a 2nd level spell, so it spends a 2nd level slot. It does not require concentration, so concentration stays empty.
+---
+ID: S-07
+Category: rest_recovery
+Difficulty: hard
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 2, "2": 1}, "spell_slots_max": {"1": 4, "2": 2}, "feature_uses": {"Arcane Recovery": {"uses_max": 1, "uses_remaining": 1, "resets_on": "long rest"}}}
+Event:
+Abigail finishes a Short Rest and uses Arcane Recovery. She chooses to recover one expended 2nd level spell slot. She does not spend any Hit Dice during the rest.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 2, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "feature_uses": {"Arcane Recovery": {"uses_max": 1, "uses_remaining": 0, "resets_on": "long rest"}}}
+Common failure: Refills all of her slots as if it were a Long Rest, or recovers the slot but leaves Arcane Recovery showing as unused.
+Rules note: At Wizard level 3, Arcane Recovery recovers expended slots with a combined level of up to 2, so one 2nd level slot is exactly the cap. It is usable once per Long Rest and it is not a full restore.
+---
+ID: S-08
+Category: feature_activation
+Difficulty: medium
+Character: Mark
+Starting state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "concentration": null, "feature_uses": {"Faerie Fire": {"uses_max": 1, "uses_remaining": 1, "resets_on": "long rest"}}}
+Event:
+Mark casts Faerie Fire, using the free casting his Drow lineage gives him once per Long Rest.
+Expected state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "concentration": "Faerie Fire", "feature_uses": {"Faerie Fire": {"uses_max": 1, "uses_remaining": 0, "resets_on": "long rest"}}}
+Common failure: Refuses the cast because a Rogue has no spell slots, or invents a spell slot for him to spend.
+Rules note: Lineage spells are cast without a slot, once per Long Rest. The casting still sets concentration, because Faerie Fire is a concentration spell. The event does not say so on purpose, same as S-14 and S-15: knowing which spells need concentration is part of the test. The free use is not in the D&D Beyond export, so it lives only in this scenario.
+---
+ID: S-09
+Category: concentration
+Difficulty: medium
+Character: Mark
+Starting state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "abilities": {"strength": 8, "dexterity": 16, "constitution": 15, "intelligence": 11, "wisdom": 13, "charisma": 12}, "concentration": "Faerie Fire"}
+Event:
+Mark takes 6 points of piercing damage. He makes a Constitution saving throw to keep his concentration. The d20 shows 8, before any modifiers.
+Expected state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 18, "hp_max": 24, "temp_hp": 0, "abilities": {"strength": 8, "dexterity": 16, "constitution": 15, "intelligence": 11, "wisdom": 13, "charisma": 12}, "concentration": "Faerie Fire"}
+Common failure: Treats the bare d20 as the result, so 8 against DC 10 fails and concentration is dropped, or adds a proficiency bonus he does not have.
+Rules note: Taking damage while concentrating forces a Constitution saving throw with a DC of 10 or half the damage taken, whichever is higher, so the DC is 10. Mark's Constitution of 15 gives +2, and Rogues are proficient only in Dexterity and Intelligence saves, so the total is 8 + 2 = 10, which meets the DC. Concentration holds and only the hit points change. Revised after review: the first version gave an ambiguous "roll of 8" and expected a failure, which is only right if 8 was already the total.
+---
+ID: S-10
+Category: feature_activation
+Difficulty: easy
+Character: Delilah
+Starting state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "feature_uses": {"Bardic Inspiration": {"uses_max": 3, "uses_remaining": 3, "resets_on": "long rest"}}}
+Event:
+As a Bonus Action, Delilah uses Bardic Inspiration on Jimmy, who is within 60 ft of her and can hear her.
+Expected state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "feature_uses": {"Bardic Inspiration": {"uses_max": 3, "uses_remaining": 2, "resets_on": "long rest"}}}
+Common failure: Leaves the uses at 3, or records the inspiration die as something Delilah herself holds.
+Rules note: Bardic Inspiration costs one use each time she gives it out. Delilah has 3 uses per Long Rest at level 3, equal to her Charisma modifier. Once given, the die belongs to Jimmy, so it does not appear anywhere in her state.
+---
+ID: S-11
+Category: feature_activation
+Difficulty: medium
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "feature_uses": {"Breath Weapon (Fire)": {"uses_max": 2, "uses_remaining": 2, "resets_on": "long rest"}}}
+Event:
+Abigail takes the Attack action and replaces one of her attacks with her Breath Weapon. Only Abigail's own state is in scope for this scenario.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "feature_uses": {"Breath Weapon (Fire)": {"uses_max": 2, "uses_remaining": 1, "resets_on": "long rest"}}}
+Common failure: Spends a spell slot as if the Breath Weapon were a spell, sometimes on top of also spending the use.
+Rules note: Breath Weapon is a species feature with its own uses, 2 per Long Rest for Abigail. It is not a spell and never touches spell slots.
+---
+ID: S-12
+Category: rest_recovery
+Difficulty: hard
+Character: Delilah
+Starting state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 9, "hp_max": 24, "temp_hp": 0, "inspiration": false, "spell_slots_remaining": {"1": 1, "2": 0}, "spell_slots_max": {"1": 4, "2": 2}, "hit_dice": [{"class": "Bard", "die": "d8", "total": 3, "used": 2, "remaining": 1}], "feature_uses": {"Bardic Inspiration": {"uses_max": 3, "uses_remaining": 1, "resets_on": "long rest"}}}
+Event:
+Delilah finishes a Long Rest.
+Expected state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "inspiration": true, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "hit_dice": [{"class": "Bard", "die": "d8", "total": 3, "used": 0, "remaining": 3}], "feature_uses": {"Bardic Inspiration": {"uses_max": 3, "uses_remaining": 3, "resets_on": "long rest"}}}
+Common failure: Applies the 2014 rule and restores only half her spent Hit Dice (used 1, remaining 2), or misses that a Human gains Heroic Inspiration on finishing a Long Rest.
+Rules note: 2024 Long Rest (SRD 5.2, Rules Glossary): you regain all lost Hit Points and all spent Hit Point Dice. Delilah is Human, and the Human Resourceful trait grants Heroic Inspiration whenever you finish a Long Rest, so inspiration goes from false to true.
+---
+ID: S-13
+Category: spellcasting
+Difficulty: medium
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "armor_class": 11, "abilities": {"strength": 8, "dexterity": 13, "constitution": 14, "intelligence": 16, "wisdom": 11, "charisma": 13}, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": null}
+Event:
+Abigail casts Mage Armor on herself.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "armor_class": 14, "abilities": {"strength": 8, "dexterity": 13, "constitution": 14, "intelligence": 16, "wisdom": 11, "charisma": 13}, "spell_slots_remaining": {"1": 3, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": null}
+Common failure: Spends the 1st level slot but leaves her armor class at 11, so the spell is paid for and does nothing, or sets her armor class to 13 and forgets her Dexterity modifier.
+Rules note: Mage Armor is a 1st level spell that sets the target's base AC to 13 plus its Dexterity modifier while it wears no armour. Abigail's Dexterity modifier is +1, from the ability scores in her state, so 14. It is not a concentration spell.
+---
+ID: S-14
+Category: spellcasting
+Difficulty: medium
+Character: Delilah
+Starting state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "conditions": [], "concentration": null}
+Event:
+Delilah casts Invisibility on herself.
+Expected state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 1}, "spell_slots_max": {"1": 4, "2": 2}, "conditions": ["invisible"], "concentration": "Invisibility"}
+Common failure: Spends a 1st level slot, spends the right slot but never sets the concentration, or forgets that the spell gives her the Invisible condition.
+Rules note: Invisibility is a 2nd level concentration spell, and in the 2024 rules the target has the Invisible condition until the spell ends. So one event changes three fields: the 2nd level slots drop by one, concentration names the spell, and conditions gains invisible. Compare S-06, where the cast spell was not concentration and only the slot moved, and S-19, where Invisible comes from hiding. The material component is covered by her Lyre, since a Bard can use a musical instrument as a spellcasting focus. Revised after the first Opus run: the key originally left conditions untouched, which the 2024 spell text contradicts.
+---
+ID: S-15
+Category: spellcasting
+Difficulty: hard
+Character: Abigail
+Starting state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": null, "feature_uses": {"Detect Magic (Magic Initiate)": {"uses_max": 1, "uses_remaining": 1, "resets_on": "long rest"}}}
+Event:
+Abigail casts Detect Magic using her Magic Initiate feat.
+Expected state:
+{"name": "Abigail", "class": "Wizard", "level": 3, "hp_current": 20, "hp_max": 20, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "concentration": "Detect Magic", "feature_uses": {"Detect Magic (Magic Initiate)": {"uses_max": 1, "uses_remaining": 0, "resets_on": "long rest"}}}
+Common failure: Spends a 1st level spell slot as well as, or instead of, the free casting.
+Rules note: Under the 2024 Magic Initiate rules, the feat's 1st level spell can be cast once without a spell slot, regained on a Long Rest. Detect Magic is also a concentration spell, so concentration is set while the slots stay untouched. This is the spellcasting sibling of S-08.
+---
+ID: S-16
+Category: spellcasting
+Difficulty: medium
+Character: Delilah
+Starting state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "spells_prepared": ["Charm Person", "Detect Magic", "Dissonant Whispers", "Faerie Fire", "Invisibility", "Tasha's Hideous Laughter"], "jimmy": {"name": "Jimmy", "hp_current": 20, "hp_max": 35, "temp_hp": 0}}
+Event:
+Delilah casts Cure Wounds on Jimmy using a 1st level spell slot. The healing roll is given: 2d8 + 3 = 12.
+Expected state:
+{"name": "Delilah", "class": "Bard", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "spell_slots_remaining": {"1": 4, "2": 2}, "spell_slots_max": {"1": 4, "2": 2}, "spells_prepared": ["Charm Person", "Detect Magic", "Dissonant Whispers", "Faerie Fire", "Invisibility", "Tasha's Hideous Laughter"], "jimmy": {"name": "Jimmy", "hp_current": 20, "hp_max": 35, "temp_hp": 0}, "action_result": "failed_impossible"}
+Common failure: Allows the cast because Cure Wounds is a Bard spell in general, spends a slot, and heals Jimmy, raising jimmy.hp_current, never checking the prepared list in her state.
+Rules note: This is a gate scenario. Cure Wounds is on the Bard spell list but it is not among the spells Delilah has prepared, which the starting state lists, so the cast cannot happen and nothing changes for either character. Jimmy's state is included because he is the target, and he starts hurt at 20 hit points precisely so that an answer which heals him anyway is caught on his numbers, not only on her slot. The correct reply is the unchanged state plus the action_result field set to failed_impossible (it is not failed_no_slot, because she has slots). Revised after the first trimmed pilot run, when a model returned Jimmy's side and there was nothing in the expected state to score it against. Revised again after review: the event now gives a healing roll like every other spell event that needs dice, so a missing roll can no longer hint that the cast is meant to fail.
+---
+ID: S-17
+Category: health_reduction
+Difficulty: hard
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 12, "hp_max": 35, "temp_hp": 0, "rage_active": true, "conditions": []}
+Event:
+Jimmy takes 12 points of psychic damage.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 0, "hp_max": 35, "temp_hp": 0, "rage_active": false, "conditions": ["unconscious"]}
+Common failure: Halves the damage to 6 as if Rage resisted every damage type, leaving him standing at 6 hit points, or drops him to 0 but leaves the rage active.
+Rules note: Rage resistance covers only bludgeoning, piercing and slashing damage, so psychic damage lands in full: 12 minus 12 is 0. A creature at 0 hit points falls unconscious, and Rage ends when the barbarian is incapacitated, which unconsciousness causes. Three fields change for three separate reasons. In the 2024 rules Unconscious includes Incapacitated and Prone, so the scorer also accepts a reply that lists those alongside unconscious.
+---
+ID: S-18
+Category: feature_activation
+Difficulty: easy
+Character: Jimmy
+Starting state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 35, "hp_max": 35, "temp_hp": 0, "feature_uses": {"Stonecunning (Tremorsense)": {"uses_max": 2, "uses_remaining": 2, "resets_on": "long rest"}}}
+Event:
+As a Bonus Action, Jimmy uses Stonecunning to sense vibrations through the stonework around him.
+Expected state:
+{"name": "Jimmy", "class": "Barbarian", "level": 3, "hp_current": 35, "hp_max": 35, "temp_hp": 0, "feature_uses": {"Stonecunning (Tremorsense)": {"uses_max": 2, "uses_remaining": 1, "resets_on": "long rest"}}}
+Also accept:
+{"senses": [{"darkvision": 120, "tremorsense": 60}]}
+Common failure: Leaves the uses at 2 because nothing visible was consumed.
+Rules note: Stonecunning grants Tremorsense for 10 minutes and has 2 uses per Long Rest for Jimmy. A quiet resource spend with no dice and no damage, the simplest possible version of the S-10 shape on a non caster. Also accepted: adding tremorsense 60 to senses, since that is exactly what Stonecunning grants for the next 10 minutes. Added after both Opus and Haiku did this on the first full run.
+---
+ID: S-19
+Category: conditions
+Difficulty: medium
+Character: Mark
+Starting state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "conditions": []}
+Event:
+Mark uses Cunning Action to take the Hide action as a Bonus Action. He ducks behind a stone wall that gives him Total Cover, out of every enemy's line of sight. His Dexterity (Stealth) check total is given: 18.
+Expected state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "conditions": ["invisible"]}
+Common failure: Returns his state completely unchanged because hiding spends nothing, or invents a homebrew condition such as hidden that is not a 5e condition.
+Rules note: Under the 2024 rules, a successful Hide (a DC 15 Stealth check while obscured or behind cover) grants the Invisible condition until it ends, for example when he attacks or is found. His given roll of 18 succeeds. This is the clearest 2024 only ruling in the set: under 2014 rules hiding was not a condition at all. S-11, S-12 and S-18 also depend on 2024 versions of their rules.
+---
+ID: S-20
+Category: healing
+Difficulty: medium
+Character: Mark
+Starting state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 20, "hp_max": 24, "temp_hp": 0, "inventory": [{"name": "Potion of Healing", "quantity": 2, "equipped": false}]}
+Event:
+As a Bonus Action, Mark drinks one Potion of Healing. The healing roll is given: 2d4 + 2 = 7.
+Expected state:
+{"name": "Mark", "class": "Rogue", "level": 3, "hp_current": 24, "hp_max": 24, "temp_hp": 0, "inventory": [{"name": "Potion of Healing", "quantity": 1, "equipped": false}]}
+Common failure: Adds the full 7 and reports 27 hit points, healing him past his maximum, or heals him and forgets to consume the potion.
+Rules note: Healing cannot raise hit points above the maximum, so 20 plus 7 stops at 24. One potion is consumed either way, so 2 become 1 (starting at 2 avoids the question of whether an empty stack is removed or kept at 0). In the 2024 rules anyone can drink a Potion of Healing as a Bonus Action, so no class feature is involved. Mark's D&D Beyond sheet has no potions, so they are added for this scenario only, in the same list format the clean sheets use. Revised after review: the first version credited Fast Hands, which is a 2014 reading.
+---

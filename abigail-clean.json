@@ -1,0 +1,842 @@
+{
+  "name": "Abigail",
+  "species": "Dragonborn (Gold Dragon)",
+  "class": "Wizard 3 (Evoker)",
+  "level": 3,
+  "abilities": {
+    "strength": 8,
+    "dexterity": 13,
+    "constitution": 14,
+    "intelligence": 16,
+    "wisdom": 11,
+    "charisma": 13
+  },
+  "ability_modifiers": {
+    "strength": -1,
+    "dexterity": 1,
+    "constitution": 2,
+    "intelligence": 3,
+    "wisdom": 0,
+    "charisma": 1
+  },
+  "proficiency_bonus": 2,
+  "hp_current": 20,
+  "hp_max": 20,
+  "temp_hp": 0,
+  "armor_class": 11,
+  "equipped_armor": null,
+  "equipped_shield": null,
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "currencies": {
+    "cp": 0,
+    "sp": 0,
+    "gp": 13,
+    "ep": 0,
+    "pp": 0
+  },
+  "gold": 13,
+  "inventory": [
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Quarterstaff",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Spellbook",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Parchment",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Backpack",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Calligrapher's Supplies",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Robe",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Robe",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Book",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Holy Symbol",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Oil",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Parchment",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Tinderbox",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Book",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Lamp",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Ink Pen",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Ink",
+      "quantity": 1,
+      "equipped": false
+    }
+  ],
+  "cantrips_known": [
+    "Fire Bolt",
+    "Frostbite",
+    "Guidance",
+    "Mage Hand",
+    "Spare the Dying"
+  ],
+  "spells_prepared": [
+    "Burning Hands",
+    "Detect Thoughts",
+    "Ice Knife",
+    "Mage Armor",
+    "Misty Step",
+    "Tasha's Hideous Laughter"
+  ],
+  "spells_always_prepared": [
+    "Detect Magic"
+  ],
+  "spells_in_spellbook_not_prepared": [
+    "Blindness/Deafness",
+    "Feather Fall",
+    "Magic Missile",
+    "Scorching Ray",
+    "Sleep"
+  ],
+  "attacks": [
+    {
+      "name": "Dagger",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 3,
+      "damage_bonus": 1
+    },
+    {
+      "name": "Dagger",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 3,
+      "damage_bonus": 1
+    },
+    {
+      "name": "Quarterstaff",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Bludgeoning",
+      "range": 5,
+      "long_range": 5,
+      "properties": [
+        "Versatile",
+        "Topple"
+      ],
+      "proficient": true,
+      "attack_bonus": 1,
+      "damage_bonus": -1
+    }
+  ],
+  "saving_throws": {
+    "strength": {
+      "total": -1,
+      "proficient": false
+    },
+    "dexterity": {
+      "total": 1,
+      "proficient": false
+    },
+    "constitution": {
+      "total": 2,
+      "proficient": false
+    },
+    "intelligence": {
+      "total": 5,
+      "proficient": true
+    },
+    "wisdom": {
+      "total": 2,
+      "proficient": true
+    },
+    "charisma": {
+      "total": 1,
+      "proficient": false
+    }
+  },
+  "skills": {
+    "Acrobatics": {
+      "ability": "dexterity",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Animal Handling": {
+      "ability": "wisdom",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Arcana": {
+      "ability": "intelligence",
+      "total": 7,
+      "proficient": true,
+      "expertise": true
+    },
+    "Athletics": {
+      "ability": "strength",
+      "total": -1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Deception": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "History": {
+      "ability": "intelligence",
+      "total": 3,
+      "proficient": false,
+      "expertise": false
+    },
+    "Insight": {
+      "ability": "wisdom",
+      "total": 2,
+      "proficient": true,
+      "expertise": false
+    },
+    "Intimidation": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Investigation": {
+      "ability": "intelligence",
+      "total": 5,
+      "proficient": true,
+      "expertise": false
+    },
+    "Medicine": {
+      "ability": "wisdom",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Nature": {
+      "ability": "intelligence",
+      "total": 3,
+      "proficient": false,
+      "expertise": false
+    },
+    "Perception": {
+      "ability": "wisdom",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Performance": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Persuasion": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Religion": {
+      "ability": "intelligence",
+      "total": 5,
+      "proficient": true,
+      "expertise": false
+    },
+    "Sleight Of Hand": {
+      "ability": "dexterity",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Stealth": {
+      "ability": "dexterity",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Survival": {
+      "ability": "wisdom",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    }
+  },
+  "initiative": 1,
+  "passive_perception": 10,
+  "proficiencies": [
+    "Calligrapher's Supplies",
+    "Simple Weapons"
+  ],
+  "languages": [
+    "Common",
+    "Common Sign Language",
+    "Draconic"
+  ],
+  "senses": {
+    "darkvision": 60
+  },
+  "hit_dice": [
+    {
+      "class": "Wizard",
+      "die": "d6",
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    }
+  ],
+  "xp": 0,
+  "inspiration": false,
+  "speed_ft": 30,
+  "resistances": [
+    "fire"
+  ],
+  "vulnerabilities": [],
+  "immunities": [],
+  "features": [
+    {
+      "name": "Breath Weapon (Fire)",
+      "source": "race",
+      "uses_max": 2,
+      "uses_remaining": 2,
+      "resets_on": "long rest",
+      "dice": "1d10",
+      "summary": "When you take the Attack action on your turn, you can replace one attack with a breath weapon that is a 15-ft. Cone or a 30-ft. Line that\u2019s 5 ft. wide (choose the shape each time). Each creature must make a DC 12 Dex. saving throw taking 1d10 Fire damage on a failed save or half as much damage on a "
+    },
+    {
+      "name": "Arcane Recovery",
+      "source": "class",
+      "uses_max": 1,
+      "uses_remaining": 1,
+      "resets_on": "long rest",
+      "summary": "When you finish a Short Rest, you can recover expended spell slots. The spell slots can have a combined level equal to no more than 2, and none of the slots can be level 6 or higher. You can use this feature once per Long Rest."
+    }
+  ],
+  "feature_uses": {
+    "Breath Weapon (Fire)": {
+      "uses_max": 2,
+      "uses_remaining": 2,
+      "resets_on": "long rest"
+    },
+    "Arcane Recovery": {
+      "uses_max": 1,
+      "uses_remaining": 1,
+      "resets_on": "long rest"
+    }
+  },
+  "class_features": [
+    "Evocation Savant",
+    "Potent Cantrip",
+    "Core Wizard Traits",
+    "Spellcasting",
+    "Ritual Adept",
+    "Arcane Recovery",
+    "Scholar",
+    "Wizard Subclass"
+  ],
+  "species_traits": [
+    "Creature Type",
+    "Size",
+    "Speed",
+    "Draconic Ancestry",
+    "Breath Weapon",
+    "Damage Resistance",
+    "Darkvision",
+    "Draconic Flight",
+    "Ability Score Increases",
+    "Languages"
+  ],
+  "feats": [
+    "Magic Initiate (Cleric)"
+  ],
+  "spellcasting": {
+    "class": "Wizard",
+    "ability": "intelligence",
+    "ability_modifier": 3,
+    "spell_attack_bonus": 5,
+    "save_dc": 13
+  },
+  "spell_details": [
+    {
+      "name": "Fire Bolt",
+      "level": 0,
+      "school": "Evocation",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "120 ft.",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "attack_roll",
+        "bonus": 5
+      },
+      "damage_dice": "1d10",
+      "damage_type": "Fire",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "spells.class"
+    },
+    {
+      "name": "Frostbite",
+      "level": 0,
+      "school": "Evocation",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "60 ft.",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "constitution",
+        "dc": 13
+      },
+      "damage_dice": "1d6",
+      "damage_type": "Cold",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "classSpells"
+    },
+    {
+      "name": "Guidance",
+      "level": 0,
+      "school": "Divination",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "Touch",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V, S",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "spells.feat"
+    },
+    {
+      "name": "Mage Hand",
+      "level": 0,
+      "school": "Conjuration",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "30 ft.",
+      "duration": "1 minute",
+      "components": "V, S",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "classSpells"
+    },
+    {
+      "name": "Spare the Dying",
+      "level": 0,
+      "school": "Necromancy",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "15 ft.",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "spells.feat"
+    },
+    {
+      "name": "Burning Hands",
+      "level": 1,
+      "school": "Evocation",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "Self (15-foot cone)",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "dexterity",
+        "dc": 13
+      },
+      "damage_dice": "3d6",
+      "damage_type": "Fire",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "classSpells"
+    },
+    {
+      "name": "Detect Magic",
+      "level": 1,
+      "school": "Divination",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": true,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "Self (30-foot sphere)",
+      "duration": "Concentration, up to 10 minutes",
+      "components": "V, S",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "spells.feat"
+    },
+    {
+      "name": "Feather Fall",
+      "level": 1,
+      "school": "Transmutation",
+      "prepared": false,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 reaction",
+      "range": "60 ft.",
+      "duration": "1 minute",
+      "components": "V, M",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "classSpells"
+    },
+    {
+      "name": "Ice Knife",
+      "level": 1,
+      "school": "Conjuration",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "60 ft.",
+      "duration": "Instantaneous",
+      "components": "S, M",
+      "resolution": {
+        "type": "attack_roll",
+        "bonus": 5
+      },
+      "damage_dice": "1d10",
+      "damage_type": "Piercing",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "classSpells"
+    },
+    {
+      "name": "Mage Armor",
+      "level": 1,
+      "school": "Abjuration",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "Touch",
+      "duration": "8 hours",
+      "components": "V, S, M",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "classSpells"
+    },
+    {
+      "name": "Magic Missile",
+      "level": 1,
+      "school": "Evocation",
+      "prepared": false,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "120 ft.",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": "1d4+1",
+      "damage_type": "Force",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "spells.class"
+    },
+    {
+      "name": "Sleep",
+      "level": 1,
+      "school": "Enchantment",
+      "prepared": false,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "60 ft.",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V, S, M",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "wisdom",
+        "dc": 13
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "classSpells"
+    },
+    {
+      "name": "Tasha's Hideous Laughter",
+      "level": 1,
+      "school": "Enchantment",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "30 ft.",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V, S, M",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "wisdom",
+        "dc": 13
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "classSpells"
+    },
+    {
+      "name": "Blindness/Deafness",
+      "level": 2,
+      "school": "Transmutation",
+      "prepared": false,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "120 ft.",
+      "duration": "1 minute",
+      "components": "V",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "constitution",
+        "dc": 13
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "classSpells"
+    },
+    {
+      "name": "Detect Thoughts",
+      "level": 2,
+      "school": "Divination",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "Self",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V, S, M",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "wisdom",
+        "dc": 13
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "classSpells"
+    },
+    {
+      "name": "Misty Step",
+      "level": 2,
+      "school": "Conjuration",
+      "prepared": true,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 bonus action",
+      "range": "Self",
+      "duration": "Instantaneous",
+      "components": "V",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "classSpells"
+    },
+    {
+      "name": "Scorching Ray",
+      "level": 2,
+      "school": "Evocation",
+      "prepared": false,
+      "always_prepared": false,
+      "ritual": false,
+      "concentration": false,
+      "casting_time": "1 action",
+      "range": "120 ft.",
+      "duration": "Instantaneous",
+      "components": "V, S",
+      "resolution": {
+        "type": "attack_roll",
+        "bonus": 5
+      },
+      "damage_dice": "2d6",
+      "damage_type": "Fire",
+      "damage_source": "spell description text",
+      "healing_dice": null,
+      "scale_type": "spellscale",
+      "source": "classSpells"
+    }
+  ],
+  "spell_slots_remaining": {
+    "1": 4,
+    "2": 2
+  },
+  "spell_slots_max": {
+    "1": 4,
+    "2": 2
+  }
+}

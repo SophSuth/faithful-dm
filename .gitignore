@@ -1,0 +1,18 @@
+# Raw D&D Beyond exports and sheet PDFs: they contain account details and
+# book text that can't be redistributed. Only the *-clean.json sheets are published.
+*.pdf
+abigail.json
+delilah.json
+jimmy.json
+mark.json
+
+# Working files
+reply.txt
+*.pages
+_backup*/
+_archive*/
+
+# System and Python clutter
+.DS_Store
+__pycache__/
+*.pyc

@@ -1,0 +1,594 @@
+{
+  "name": "Mark",
+  "species": "Elf (Drow Lineage)",
+  "class": "Rogue 3 (Thief)",
+  "level": 3,
+  "abilities": {
+    "strength": 8,
+    "dexterity": 16,
+    "constitution": 15,
+    "intelligence": 11,
+    "wisdom": 13,
+    "charisma": 12
+  },
+  "ability_modifiers": {
+    "strength": -1,
+    "dexterity": 3,
+    "constitution": 2,
+    "intelligence": 0,
+    "wisdom": 1,
+    "charisma": 1
+  },
+  "proficiency_bonus": 2,
+  "hp_current": 24,
+  "hp_max": 24,
+  "temp_hp": 0,
+  "armor_class": 14,
+  "equipped_armor": "Leather",
+  "equipped_shield": null,
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "currencies": {
+    "cp": 0,
+    "sp": 0,
+    "gp": 24,
+    "ep": 0,
+    "pp": 0
+  },
+  "gold": 24,
+  "inventory": [
+    {
+      "name": "Leather",
+      "quantity": 1,
+      "equipped": true,
+      "base_armor_class": 11,
+      "armor_type": "light"
+    },
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Dagger",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Shortbow",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Shortsword",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Backpack",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Pouch",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Pouch",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Quiver",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Thieves' Tools",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Thieves' Tools",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Arrows",
+      "quantity": 20,
+      "equipped": true
+    },
+    {
+      "name": "Crowbar",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Traveler's Clothes",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Oil",
+      "quantity": 7,
+      "equipped": false
+    },
+    {
+      "name": "Ball Bearings",
+      "quantity": 1000,
+      "equipped": false
+    },
+    {
+      "name": "Rations",
+      "quantity": 5,
+      "equipped": false
+    },
+    {
+      "name": "Rope",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Bell",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Tinderbox",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Waterskin",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Hooded Lantern",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Candle",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Crowbar",
+      "quantity": 1,
+      "equipped": false
+    }
+  ],
+  "cantrips_known": [
+    "Dancing Lights"
+  ],
+  "spells_prepared": [],
+  "spells_always_prepared": [
+    "Faerie Fire"
+  ],
+  "spells_in_spellbook_not_prepared": [],
+  "attacks": [
+    {
+      "name": "Dagger",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Dagger",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Dagger",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Dagger",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d4",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Thrown",
+        "Nick"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Shortbow",
+      "equipped": true,
+      "attack_type": "ranged",
+      "damage_dice": "1d6",
+      "damage_type": "Piercing",
+      "range": 80,
+      "long_range": 320,
+      "properties": [
+        "Ammunition",
+        "Range",
+        "Two-Handed",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Shortsword",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Piercing",
+      "range": 5,
+      "long_range": 5,
+      "properties": [
+        "Finesse",
+        "Light",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    }
+  ],
+  "saving_throws": {
+    "strength": {
+      "total": -1,
+      "proficient": false
+    },
+    "dexterity": {
+      "total": 5,
+      "proficient": true
+    },
+    "constitution": {
+      "total": 2,
+      "proficient": false
+    },
+    "intelligence": {
+      "total": 2,
+      "proficient": true
+    },
+    "wisdom": {
+      "total": 1,
+      "proficient": false
+    },
+    "charisma": {
+      "total": 1,
+      "proficient": false
+    }
+  },
+  "skills": {
+    "Acrobatics": {
+      "ability": "dexterity",
+      "total": 3,
+      "proficient": false,
+      "expertise": false
+    },
+    "Animal Handling": {
+      "ability": "wisdom",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Arcana": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Athletics": {
+      "ability": "strength",
+      "total": -1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Deception": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "History": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Insight": {
+      "ability": "wisdom",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Intimidation": {
+      "ability": "charisma",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Investigation": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Medicine": {
+      "ability": "wisdom",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Nature": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Perception": {
+      "ability": "wisdom",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Performance": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Persuasion": {
+      "ability": "charisma",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Religion": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Sleight Of Hand": {
+      "ability": "dexterity",
+      "total": 7,
+      "proficient": true,
+      "expertise": true
+    },
+    "Stealth": {
+      "ability": "dexterity",
+      "total": 7,
+      "proficient": true,
+      "expertise": true
+    },
+    "Survival": {
+      "ability": "wisdom",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    }
+  },
+  "initiative": 5,
+  "passive_perception": 13,
+  "proficiencies": [
+    "Bola",
+    "Crossbow Hand",
+    "Darts",
+    "Light Armor",
+    "Rapier",
+    "Scimitar",
+    "Shortsword",
+    "Simple Weapons",
+    "Thieves' Tools",
+    "Weighted Chain",
+    "Whip"
+  ],
+  "languages": [
+    "Common",
+    "Common Sign Language",
+    "Draconic",
+    "Elvish",
+    "Thieves' Cant"
+  ],
+  "senses": {
+    "darkvision": 120
+  },
+  "hit_dice": [
+    {
+      "class": "Rogue",
+      "die": "d8",
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    }
+  ],
+  "xp": 0,
+  "inspiration": false,
+  "speed_ft": 30,
+  "resistances": [],
+  "vulnerabilities": [],
+  "immunities": [
+    "magical-sleep"
+  ],
+  "features": [
+    {
+      "name": "Sneak Attack",
+      "source": "class",
+      "dice": "2d6",
+      "summary": "Once per turn you can deal an extra 2d6 damage to one creature you hit with an attack if you have Advantage on the roll and the attack uses a Finesse or Ranged weapon. The extra damage\u2019s type is the same as the weapon\u2019s type. You don\u2019t need Advantage on the attack if at least one of your allies is w"
+    },
+    {
+      "name": "Cunning Action",
+      "source": "class",
+      "summary": "On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage, or Hide."
+    },
+    {
+      "name": "Steady Aim",
+      "source": "class",
+      "summary": "You give yourself Advantage on your next attack roll on the current turn, provided that you haven\u2019t moved during this turn. After you use it, your Speed is 0 until the end of the current turn."
+    },
+    {
+      "name": "Fast Hands: Sleight of Hand",
+      "source": "class",
+      "summary": "Make a Dexterity (Sleight of Hand) check to pick a lock or disarm a trap with Thieves\u2019 Tools or to pick a pocket."
+    },
+    {
+      "name": "Fast Hands: Utilize",
+      "source": "class",
+      "summary": "Take the Utilize action to use an object."
+    },
+    {
+      "name": "Fast Hands: Use Magic Item",
+      "source": "class",
+      "summary": "Take the Magic action to use a magic item that requires that action."
+    },
+    {
+      "name": "Vex (Shortsword)",
+      "source": "weapon mastery",
+      "summary": "Vex. If you hit a creature with a Shortsword and deal damage to it, you have Advantage on your next attack roll against that creature before the end of your next turn."
+    },
+    {
+      "name": "Slow (Whip)",
+      "source": "weapon mastery",
+      "summary": "Slow. If you hit a creature with a Whip and deal damage to the creature, you can reduce its Speed by 10 ft. until the start of your next turn. If the creature is hit more than once with this property, the Speed reduction doesn\u2019t exceed 10 ft."
+    }
+  ],
+  "feature_uses": {},
+  "class_features": [
+    "Fast Hands",
+    "Second-Story Work",
+    "Core Rogue Traits",
+    "Expertise",
+    "Sneak Attack",
+    "Thieves\u2019 Cant",
+    "Weapon Mastery",
+    "Cunning Action",
+    "Rogue Subclass",
+    "Steady Aim"
+  ],
+  "species_traits": [
+    "Creature Type",
+    "Size",
+    "Speed",
+    "Darkvision",
+    "Elven Lineage",
+    "Fey Ancestry",
+    "Keen Senses",
+    "Trance",
+    "Elven Lineage Spells",
+    "Ability Score Increases",
+    "Languages"
+  ],
+  "feats": [
+    "Alert"
+  ],
+  "spellcasting": null,
+  "spell_details": [
+    {
+      "name": "Dancing Lights",
+      "level": 0,
+      "school": "Illusion",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "120 ft.",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V, S, M",
+      "resolution": {
+        "type": "none"
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": "characterlevel",
+      "source": "spells.race"
+    },
+    {
+      "name": "Faerie Fire",
+      "level": 1,
+      "school": "Evocation",
+      "prepared": true,
+      "always_prepared": true,
+      "ritual": false,
+      "concentration": true,
+      "casting_time": "1 action",
+      "range": "60 ft.",
+      "duration": "Concentration, up to 1 minute",
+      "components": "V",
+      "resolution": {
+        "type": "saving_throw",
+        "ability": "dexterity",
+        "dc": 11
+      },
+      "damage_dice": null,
+      "damage_type": null,
+      "damage_source": null,
+      "healing_dice": null,
+      "scale_type": null,
+      "source": "spells.race"
+    }
+  ],
+  "spell_slots_remaining": null,
+  "spell_slots_max": null
+}

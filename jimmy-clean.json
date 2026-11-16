@@ -1,0 +1,505 @@
+{
+  "name": "Jimmy",
+  "species": "Dwarf",
+  "class": "Barbarian 3 (Path of the Berserker)",
+  "level": 3,
+  "abilities": {
+    "strength": 16,
+    "dexterity": 13,
+    "constitution": 15,
+    "intelligence": 10,
+    "wisdom": 8,
+    "charisma": 13
+  },
+  "ability_modifiers": {
+    "strength": 3,
+    "dexterity": 1,
+    "constitution": 2,
+    "intelligence": 0,
+    "wisdom": -1,
+    "charisma": 1
+  },
+  "proficiency_bonus": 2,
+  "hp_current": 35,
+  "hp_max": 35,
+  "temp_hp": 0,
+  "armor_class": 13,
+  "equipped_armor": null,
+  "equipped_shield": null,
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "currencies": {
+    "cp": 0,
+    "sp": 0,
+    "gp": 29,
+    "ep": 0,
+    "pp": 0
+  },
+  "gold": 29,
+  "inventory": [
+    {
+      "name": "Handaxe",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Handaxe",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Handaxe",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Handaxe",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Spear",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Shortbow",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Greataxe",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Backpack",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Quiver",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Arrows",
+      "quantity": 20,
+      "equipped": true
+    },
+    {
+      "name": "Healer's Kit",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Traveler's Clothes",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Oil",
+      "quantity": 2,
+      "equipped": false
+    },
+    {
+      "name": "Rations",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Rope",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Bedroll",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Tinderbox",
+      "quantity": 1,
+      "equipped": false
+    },
+    {
+      "name": "Torch",
+      "quantity": 10,
+      "equipped": false
+    },
+    {
+      "name": "Waterskin",
+      "quantity": 1,
+      "equipped": false
+    }
+  ],
+  "cantrips_known": [],
+  "spells_prepared": [],
+  "spells_always_prepared": [],
+  "spells_in_spellbook_not_prepared": [],
+  "attacks": [
+    {
+      "name": "Handaxe",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Slashing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Light",
+        "Thrown",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Handaxe",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Slashing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Light",
+        "Thrown",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Handaxe",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Slashing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Light",
+        "Thrown",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Handaxe",
+      "equipped": false,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Slashing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Light",
+        "Thrown",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Spear",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d6",
+      "damage_type": "Piercing",
+      "range": 20,
+      "long_range": 60,
+      "properties": [
+        "Thrown",
+        "Versatile",
+        "Sap"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    },
+    {
+      "name": "Shortbow",
+      "equipped": true,
+      "attack_type": "ranged",
+      "damage_dice": "1d6",
+      "damage_type": "Piercing",
+      "range": 80,
+      "long_range": 320,
+      "properties": [
+        "Ammunition",
+        "Range",
+        "Two-Handed",
+        "Vex"
+      ],
+      "proficient": true,
+      "attack_bonus": 3,
+      "damage_bonus": 1
+    },
+    {
+      "name": "Greataxe",
+      "equipped": true,
+      "attack_type": "melee",
+      "damage_dice": "1d12",
+      "damage_type": "Slashing",
+      "range": 5,
+      "long_range": 5,
+      "properties": [
+        "Heavy",
+        "Two-Handed",
+        "Cleave"
+      ],
+      "proficient": true,
+      "attack_bonus": 5,
+      "damage_bonus": 3
+    }
+  ],
+  "saving_throws": {
+    "strength": {
+      "total": 5,
+      "proficient": true
+    },
+    "dexterity": {
+      "total": 1,
+      "proficient": false
+    },
+    "constitution": {
+      "total": 4,
+      "proficient": true
+    },
+    "intelligence": {
+      "total": 0,
+      "proficient": false
+    },
+    "wisdom": {
+      "total": -1,
+      "proficient": false
+    },
+    "charisma": {
+      "total": 1,
+      "proficient": false
+    }
+  },
+  "skills": {
+    "Acrobatics": {
+      "ability": "dexterity",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Animal Handling": {
+      "ability": "wisdom",
+      "total": -1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Arcana": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Athletics": {
+      "ability": "strength",
+      "total": 5,
+      "proficient": true,
+      "expertise": false
+    },
+    "Deception": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "History": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Insight": {
+      "ability": "wisdom",
+      "total": -1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Intimidation": {
+      "ability": "charisma",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Investigation": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Medicine": {
+      "ability": "wisdom",
+      "total": -1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Nature": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Perception": {
+      "ability": "wisdom",
+      "total": 1,
+      "proficient": true,
+      "expertise": false
+    },
+    "Performance": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Persuasion": {
+      "ability": "charisma",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Religion": {
+      "ability": "intelligence",
+      "total": 0,
+      "proficient": false,
+      "expertise": false
+    },
+    "Sleight Of Hand": {
+      "ability": "dexterity",
+      "total": 1,
+      "proficient": false,
+      "expertise": false
+    },
+    "Stealth": {
+      "ability": "dexterity",
+      "total": 3,
+      "proficient": true,
+      "expertise": false
+    },
+    "Survival": {
+      "ability": "wisdom",
+      "total": 1,
+      "proficient": true,
+      "expertise": false
+    }
+  },
+  "initiative": 1,
+  "passive_perception": 11,
+  "proficiencies": [
+    "Light Armor",
+    "Martial Weapons",
+    "Medium Armor",
+    "Shields",
+    "Simple Weapons",
+    "Three Dragon Ante"
+  ],
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Halfling"
+  ],
+  "senses": {
+    "darkvision": 120
+  },
+  "hit_dice": [
+    {
+      "class": "Barbarian",
+      "die": "d12",
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    }
+  ],
+  "xp": 0,
+  "inspiration": false,
+  "speed_ft": 30,
+  "resistances": [
+    "poison"
+  ],
+  "vulnerabilities": [],
+  "immunities": [],
+  "features": [
+    {
+      "name": "Stonecunning (Tremorsense)",
+      "source": "race",
+      "uses_max": 2,
+      "uses_remaining": 2,
+      "resets_on": "long rest",
+      "summary": "You gain Tremorsense with a range of 60 ft. for 10 minutes. You must be on or touching a natural or worked stone surface to use this Tremorsense."
+    },
+    {
+      "name": "Rage (Enter)",
+      "source": "class",
+      "uses_max": 3,
+      "uses_remaining": 3,
+      "resets_on": "long rest",
+      "summary": "You can enter Rage if you aren\u2019t wearing Heavy Armor. You can use Rage 3 times per Long Rest, and regain one expended use when you finish a Short Rest."
+    },
+    {
+      "name": "Cleave (Greataxe)",
+      "source": "weapon mastery",
+      "summary": "Cleave. Once per turn, if you hit a creature with a melee attack using a Greataxe, you can make another melee attack with it against a second creature within 5 ft. of the first that\u2019s within your reach. On a hit, the second creature takes the Greataxe\u2019s damage, but without your ability modifier (unl"
+    },
+    {
+      "name": "Graze (Greatsword)",
+      "source": "weapon mastery",
+      "summary": "Graze. If your attack roll with a Greatsword misses a creature, you can deal damage to it equal to the ability modifier used to make the attack. This damage is the same type dealt by the Greatsword, and can only be increased by increasing the ability modifier."
+    }
+  ],
+  "feature_uses": {
+    "Stonecunning (Tremorsense)": {
+      "uses_max": 2,
+      "uses_remaining": 2,
+      "resets_on": "long rest"
+    },
+    "Rage (Enter)": {
+      "uses_max": 3,
+      "uses_remaining": 3,
+      "resets_on": "long rest"
+    }
+  },
+  "class_features": [
+    "Frenzy",
+    "Rage",
+    "Unarmored Defense",
+    "Weapon Mastery",
+    "Danger Sense",
+    "Reckless Attack",
+    "Barbarian Subclass",
+    "Primal Knowledge",
+    "Core Barbarian Traits"
+  ],
+  "species_traits": [
+    "Darkvision",
+    "Creature Type",
+    "Size",
+    "Speed",
+    "Dwarven Resilience",
+    "Dwarven Toughness",
+    "Stonecunning",
+    "Ability Score Increases",
+    "Languages"
+  ],
+  "feats": [
+    "Savage Attacker"
+  ],
+  "spellcasting": null,
+  "spell_details": [],
+  "spell_slots_remaining": null,
+  "spell_slots_max": null
+}
